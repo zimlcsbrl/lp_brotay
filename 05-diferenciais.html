@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brotay - Diferenciais</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<link href="styles/responsive.css" rel="stylesheet"/>
+<style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-y: auto; 
+            background-color: #111827; 
+            font-family: 'Open Sans', sans-serif; 
+        }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            display: flex; 
+            flex-direction: column;
+            position: relative; 
+            overflow: visible; 
+            background-color: #111827;
+        }
+        
+        h1, h2, h3, .heading-font { font-family: 'Montserrat', sans-serif; }
+        
+        .text-brand-primary { color: #FF4500; }
+        .bg-brand-primary { background-color: #FF4500; }
+        .text-brand-secondary { color: #FF6B35; }
+        .bg-brand-secondary { background-color: #FF6B35; }
+        .border-brand-primary { border-color: #FF4500; }
+        
+        /* Using solid colors with blur instead of gradients for background accents */
+        .circle-accent {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(80px);
+        }
+        
+        .feature-card {
+            background-color: rgba(31, 41, 55, 0.6);
+            /* backdrop-filter removed for better PDF export compatibility in some engines, keeping basic transparency */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .icon-box {
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
+        }
+
+        .closing-box {
+            background-color: rgba(255, 69, 0, 0.1);
+            border-left: 6px solid #FF4500;
+        }
+
+        /* Chart Containers styled as Dashboard Widgets */
+        .chart-widget {
+            background-color: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(75, 85, 99, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container text-white p-12">
+<!-- Decorative Background Elements -->
+<div class="circle-accent bg-brand-primary opacity-5" style="width: 700px; height: 700px; top: -200px; left: -200px;"></div>
+<div class="circle-accent bg-gray-800 opacity-20" style="width: 500px; height: 500px; bottom: -100px; right: -100px;"></div>
+<!-- Top Accent Line -->
+<div class="absolute top-0 left-0 h-2 w-full bg-brand-primary z-50"></div>
+<!-- Content Layout -->
+<div class="flex flex-1 z-10 h-full relative">
+<!-- Left Column: Title & Visual Data -->
+<div class="w-5/12 flex flex-col pr-8 pt-4">
+<div class="mb-6">
+<span class="text-brand-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Diferenciais</span>
+<h1 class="heading-font text-5xl font-black mb-4 leading-none">
+                        Por que<br/>
+<span class="text-white">Brotay?</span>
+</h1>
+<p class="text-lg text-gray-400 leading-snug">
+                        Tecnologia construída para dar superpoderes aos produtores de eventos.
+                    </p>
+</div>
+<!-- Visual Composition: Insights & Demographics -->
+<div class="flex flex-col gap-4 flex-grow relative">
+<!-- Widget 1: Audience Demographics -->
+<div class="chart-widget p-4 h-48 relative">
+<h4 class="text-xs font-bold text-gray-400 uppercase mb-2 flex justify-between items-center">
+<span>Perfil do Público</span>
+<i class="fas fa-users text-brand-secondary"></i>
+</h4>
+<div class="w-full h-36" id="demoChart"></div>
+</div>
+<!-- Widget 2: Sales/Return Insight -->
+<div class="chart-widget p-4 h-48 relative transform translate-x-8 border-brand-primary border-opacity-30">
+<h4 class="text-xs font-bold text-gray-400 uppercase mb-2 flex justify-between items-center">
+<span>Retenção &amp; Retorno</span>
+<i class="fas fa-chart-line text-brand-primary"></i>
+</h4>
+<div class="w-full h-36" id="insightChart"></div>
+</div>
+</div>
+</div>
+<!-- Right Column: List Items -->
+<div class="w-7/12 flex flex-col justify-between h-full pl-8 border-l border-gray-800">
+<div class="flex flex-col space-y-3">
+<!-- Item 1 -->
+<div class="feature-card flex items-center p-3 rounded-lg">
+<div class="icon-box w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-brand-primary mr-4 flex-shrink-0 border border-gray-700">
+<i class="fa-solid fa-chart-pie text-lg"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-base text-white">Dados além do faturamento</h3>
+<p class="text-gray-400 text-xs">Análises profundas sobre comportamento, não apenas vendas totais.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="feature-card flex items-center p-3 rounded-lg">
+<div class="icon-box w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-brand-primary mr-4 flex-shrink-0 border border-gray-700">
+<i class="fa-solid fa-lightbulb text-lg"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-base text-white">Decisões, não só controle</h3>
+<p class="text-gray-400 text-xs">Relatórios desenhados para gerar insights acionáveis imediatamente.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="feature-card flex items-center p-3 rounded-lg">
+<div class="icon-box w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-brand-primary mr-4 flex-shrink-0 border border-gray-700">
+<i class="fa-solid fa-bolt text-lg"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-base text-white">Plataforma leve e rápida</h3>
+<p class="text-gray-400 text-xs">Experiência fluida para compra e gestão, sem travamentos.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="feature-card flex items-center p-3 rounded-lg">
+<div class="icon-box w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-brand-primary mr-4 flex-shrink-0 border border-gray-700">
+<i class="fa-solid fa-scale-balanced text-lg"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-base text-white">Equilíbrio Ideal</h3>
+<p class="text-gray-400 text-xs">A melhor combinação entre taxas justas, repasse rápido e tecnologia.</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="feature-card flex items-center p-3 rounded-lg">
+<div class="icon-box w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-brand-primary mr-4 flex-shrink-0 border border-gray-700">
+<i class="fa-solid fa-users-viewfinder text-lg"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-base text-white">Visão 360º do Cliente</h3>
+<p class="text-gray-400 text-xs">Saiba exatamente quem compra, quando compra e se retorna.</p>
+</div>
+</div>
+</div>
+<!-- Closing Statement -->
+<div class="closing-box p-5 rounded-r-xl mt-4">
+<p class="heading-font text-2xl font-black text-white leading-tight">
+<span class="text-gray-400 font-normal">Menos achismo.</span> <br/>
+<span class="text-brand-primary">Mais estratégia.</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Page Number -->
+<div class="absolute bottom-6 right-10 text-gray-600 font-bold font-mono">05</div>
+</div>
+<!-- Scripts for Charts -->
+<script>
+        // Init Demographics Chart
+        var demoChartDom = document.getElementById('demoChart');
+        var demoChart = echarts.init(demoChartDom);
+        var demoOption = {
+            animation: false,
+            grid: { top: 10, bottom: 20, left: 40, right: 10 },
+            xAxis: { 
+                type: 'value', 
+                show: false,
+                splitLine: { show: false }
+            },
+            yAxis: { 
+                type: 'category', 
+                data: ['18-24', '25-34', '35-44', '45+'],
+                axisLine: { show: false },
+                axisTick: { show: false },
+                axisLabel: { color: '#9CA3AF', fontSize: 10 }
+            },
+            series: [
+                {
+                    data: [85, 92, 45, 20],
+                    type: 'bar',
+                    barWidth: 10,
+                    itemStyle: {
+                        color: '#FF6B35',
+                        borderRadius: [0, 5, 5, 0]
+                    },
+                    label: {
+                        show: true,
+                        position: 'right',
+                        color: '#fff',
+                        fontSize: 9,
+                        formatter: '{c}%'
+                    }
+                }
+            ]
+        };
+        demoChart.setOption(demoOption);
+
+        // Init Insights Chart
+        var insightChartDom = document.getElementById('insightChart');
+        var insightChart = echarts.init(insightChartDom);
+        var insightOption = {
+            animation: false,
+            grid: { top: 10, bottom: 20, left: 0, right: 0 },
+            xAxis: { 
+                type: 'category', 
+                data: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                show: false
+            },
+            yAxis: { 
+                type: 'value', 
+                show: false,
+                splitLine: { show: false }
+            },
+            series: [
+                {
+                    data: [120, 132, 101, 134, 290, 230, 210],
+                    type: 'line',
+                    smooth: true,
+                    symbol: 'none',
+                    lineStyle: {
+                        color: '#FF4500',
+                        width: 3
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: 'rgba(255, 69, 0, 0.5)' },
+                            { offset: 1, color: 'rgba(255, 69, 0, 0)' }
+                        ])
+                    }
+                }
+            ]
+        };
+        insightChart.setOption(insightOption);
+
+        // Resize charts on window resize
+        window.addEventListener('resize', function() {
+            demoChart.resize();
+            insightChart.resize();
+        });
+    </script>
+</div>
+<!-- Navigation Buttons (outside container) -->
+<div class="nav-buttons">
+  <button onclick="window.location.href='01-capa.html'" class="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-lg font-bold transition" title="Voltar para o início">
+    <i class="fa-solid fa-home"></i> <span class="mobile-hidden">Início</span>
+  </button>
+  <button onclick="window.location.href='04-funcionalidades.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Slide anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button onclick="window.location.href='06-objetivo.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Próximo slide">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <a href="https://www.brotay.com.br" target="_blank" class="bg-brand-secondary hover:bg-brand-primary text-white px-4 py-2 rounded-lg font-bold transition text-center" title="Visitar o site">
+    <i class="fa-solid fa-globe"></i> <span class="mobile-hidden">Site</span>
+  </a>
+</div>
+<div class="swipe-hint"><i class="fa-solid fa-hand-pointer"></i> Deslize para navegar</div>
+<script src="js/navigation.js"></script>
+</body>
+</html>

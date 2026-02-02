@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brotay - Objetivos</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="styles/responsive.css" rel="stylesheet"/>
+<style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-y: auto; 
+            background-color: #111827; 
+            font-family: 'Open Sans', sans-serif; 
+        }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            display: flex; 
+            flex-direction: column;
+            position: relative; 
+            overflow: visible; 
+            background-color: #111827;
+        }
+        
+        /* Typography */
+        h1, h2, h3, .heading-font { font-family: 'Montserrat', sans-serif; }
+        
+        /* Brand Colors */
+        .text-brand-primary { color: #FF4500; }
+        .bg-brand-primary { background-color: #FF4500; }
+        .text-brand-secondary { color: #FF6B35; }
+        .bg-brand-secondary { background-color: #FF6B35; }
+        .text-brand-gold { color: #FFD700; }
+        
+        /* Background Decorations */
+        .circle-accent {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(80px);
+        }
+        
+        /* Timeline Specifics */
+        .timeline-wrapper {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .central-line {
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            right: 100px;
+            height: 2px;
+            background-color: #374151;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .timeline-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .top-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 24px;
+            width: 100%;
+        }
+
+        .bottom-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 24px;
+            width: 100%;
+        }
+
+        .center-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #111827;
+            border-width: 4px;
+            z-index: 20;
+            position: relative;
+        }
+
+        /* Card Styles */
+        .goal-card {
+            background-color: rgba(31, 41, 55, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 20px;
+            width: 90%;
+            transition: all 0.3s ease;
+        }
+
+        .goal-card:hover {
+            transform: translateY(5px);
+            background-color: rgba(31, 41, 55, 0.8);
+        }
+
+        /* Specific Colors per Phase */
+        /* Short Term - Gold */
+        .phase-short .center-dot { border-color: #F59E0B; box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
+        .phase-short .label-text { color: #F59E0B; }
+        .phase-short .goal-card { border-top: 3px solid #F59E0B; }
+        .phase-short .icon-circle { background-color: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+
+        /* Medium Term - Brand Red/Orange */
+        .phase-medium .center-dot { border-color: #FF4500; box-shadow: 0 0 15px rgba(255, 69, 0, 0.3); }
+        .phase-medium .label-text { color: #FF4500; }
+        .phase-medium .goal-card { border-top: 3px solid #FF4500; }
+        .phase-medium .icon-circle { background-color: rgba(255, 69, 0, 0.15); color: #FF4500; }
+
+        /* Long Term - Tech Blue */
+        .phase-long .center-dot { border-color: #3B82F6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+        .phase-long .label-text { color: #3B82F6; }
+        .phase-long .goal-card { border-top: 3px solid #3B82F6; }
+        .phase-long .icon-circle { background-color: rgba(59, 130, 246, 0.15); color: #3B82F6; }
+
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .closing-box {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container text-white">
+<!-- Background Elements -->
+<div class="circle-accent bg-brand-primary opacity-5" style="width: 800px; height: 800px; top: -400px; right: 0;"></div>
+<div class="circle-accent bg-blue-900 opacity-10" style="width: 600px; height: 600px; bottom: -200px; left: -100px;"></div>
+<!-- Top Accent Line -->
+<div class="absolute top-0 left-0 h-2 w-full bg-brand-primary z-50"></div>
+<!-- Header -->
+<div class="pt-10 px-16 w-full z-20">
+<span class="text-brand-secondary font-bold tracking-widest uppercase text-xs mb-2 block">Roadmap</span>
+<h1 class="heading-font text-5xl font-black leading-tight">
+                Nosso <span class="text-brand-primary">Objetivo</span>
+</h1>
+</div>
+<!-- Timeline Content -->
+<div class="timeline-wrapper px-12">
+<!-- Connecting Line -->
+<div class="central-line"></div>
+<!-- Grid for Columns -->
+<div class="grid grid-cols-3 gap-8 w-full h-full max-w-6xl">
+<!-- Short Term -->
+<div class="timeline-column phase-short">
+<div class="top-section">
+<span class="label-text font-bold uppercase tracking-widest text-sm mb-1">Curto Prazo</span>
+<h3 class="heading-font text-2xl font-bold text-white text-center">Facilitar Vendas</h3>
+<div class="h-8 w-px bg-gray-700 mt-4 mb-0 opacity-50"></div>
+</div>
+<div class="center-dot"></div>
+<div class="bottom-section">
+<div class="goal-card">
+<div class="icon-circle">
+<i class="fa-solid fa-ticket"></i>
+</div>
+<p class="text-gray-300 text-sm leading-relaxed">
+                                Facilitar a venda de ingressos com uma plataforma estável e simples de usar.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Medium Term -->
+<div class="timeline-column phase-medium">
+<div class="top-section">
+<span class="label-text font-bold uppercase tracking-widest text-sm mb-1">Médio Prazo</span>
+<h3 class="heading-font text-2xl font-bold text-white text-center">Aumentar Lucro</h3>
+<div class="h-8 w-px bg-gray-700 mt-4 mb-0 opacity-50"></div>
+</div>
+<div class="center-dot"></div>
+<div class="bottom-section">
+<div class="goal-card">
+<div class="icon-circle">
+<i class="fa-solid fa-arrow-trend-up"></i>
+</div>
+<p class="text-gray-300 text-sm leading-relaxed">
+                                Ajudar produtores a reduzir custos operacionais e ganhar mais por evento realizado.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Long Term -->
+<div class="timeline-column phase-long">
+<div class="top-section">
+<span class="label-text font-bold uppercase tracking-widest text-sm mb-1">Longo Prazo</span>
+<h3 class="heading-font text-2xl font-bold text-white text-center">Inteligência</h3>
+<div class="h-8 w-px bg-gray-700 mt-4 mb-0 opacity-50"></div>
+</div>
+<div class="center-dot"></div>
+<div class="bottom-section">
+<div class="goal-card">
+<div class="icon-circle">
+<i class="fa-solid fa-brain"></i>
+</div>
+<p class="text-gray-300 text-sm leading-relaxed">
+                                Ser a principal plataforma de inteligência de dados para o mercado de eventos.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Closing Statement Footer -->
+<div class="closing-box py-8 w-full z-20 mt-auto">
+<div class="max-w-4xl mx-auto px-8 text-center">
+<p class="heading-font text-2xl font-medium text-white leading-relaxed">
+<i class="fa-solid fa-quote-left text-brand-secondary opacity-30 text-xl mr-2 align-top"></i>
+                    A Brotay não vende ingressos. Ela transforma eventos em <span class="text-brand-primary font-black">decisões lucrativas</span>.
+                </p>
+</div>
+</div>
+<!-- Page Number -->
+<div class="absolute bottom-8 right-12 text-gray-600 font-bold font-mono text-sm z-30">06</div>
+</div>
+<!-- Navigation Buttons (outside container) -->
+<div class="nav-buttons">
+  <button onclick="window.location.href='01-capa.html'" class="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-lg font-bold transition" title="Voltar para o início">
+    <i class="fa-solid fa-home"></i> <span class="mobile-hidden">Início</span>
+  </button>
+  <button onclick="window.location.href='05-diferenciais.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Slide anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button onclick="window.location.href='07-encerramento.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Próximo slide">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <a href="https://www.brotay.com.br" target="_blank" class="bg-brand-secondary hover:bg-brand-primary text-white px-4 py-2 rounded-lg font-bold transition text-center" title="Visitar o site">
+    <i class="fa-solid fa-globe"></i> <span class="mobile-hidden">Site</span>
+  </a>
+</div>
+<div class="swipe-hint"><i class="fa-solid fa-hand-pointer"></i> Deslize para navegar</div>
+<script src="js/navigation.js"></script>
+</body>
+</html>

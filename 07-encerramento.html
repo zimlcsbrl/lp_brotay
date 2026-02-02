@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brotay — Encerramento</title>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="styles/responsive.css" rel="stylesheet"/>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    background-color: #111827;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .slide-container {
+    width: 1280px;
+    min-height: 720px;
+    display: flex;
+    position: relative;
+    overflow: visible;
+    background-color: #111827;
+  }
+
+  h1, h2, h3, .heading-font {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .text-brand-primary { color: #FF4500; }
+  .bg-brand-primary { background-color: #FF4500; }
+  .text-brand-secondary { color: #FF6B35; }
+
+  .circle-accent {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .cta-button {
+    background-color: #FF4500;
+    box-shadow: 0 10px 25px -5px rgba(255, 69, 0, 0.5);
+    transition: transform 0.2s ease;
+  }
+
+  .mascot-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 520px;
+    background-color: rgba(255, 69, 0, 0.2);
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 10;
+  }
+
+  .floating-icon {
+    background-color: #1F2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  }
+</style>
+</head>
+
+<body>
+<div class="slide-container text-white p-16">
+
+  <!-- Background -->
+  <div class="circle-accent bg-brand-primary opacity-5"
+       style="width: 900px; height: 900px; top: -200px; right: -200px;"></div>
+  <div class="absolute top-0 left-0 h-2 w-full bg-brand-primary z-50"></div>
+
+  <div class="flex w-full h-full z-20 items-center">
+
+    <!-- LEFT CONTENT -->
+    <div class="w-7/12 flex flex-col justify-center pr-16 space-y-12">
+
+      <!-- Header -->
+      <div class="flex items-center gap-3">
+        <img alt="Brotay Logo"
+             class="h-8 object-contain opacity-80"
+             src="midias/logo-texto.png"/>
+        <div class="h-4 w-px bg-gray-600"></div>
+        <span class="text-brand-secondary font-bold tracking-widest uppercase text-xs">
+          Encerramento
+        </span>
+      </div>
+
+      <!-- Main Message -->
+      <div>
+        <h1 class="heading-font text-7xl font-black leading-[1.1] mb-6">
+          O futuro dos eventos<br/>
+          <span class="text-brand-primary">é inteligente</span>
+        </h1>
+
+        <p class="text-2xl font-semibold leading-snug max-w-xl">
+          A Brotay não vende ingressos.<br/>
+          <span class="text-brand-primary">Ela entrega decisões lucrativas.</span>
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex gap-6 pt-4">
+        <a href="https://brotay.com.br" target="_blank"
+           class="cta-button px-10 py-6 rounded-2xl flex items-center gap-4 hover:scale-105 transform">
+          <i class="fa-solid fa-globe text-2xl"></i>
+          <span class="heading-font text-2xl font-black">brotay.com.br</span>
+        </a>
+
+        <a href="mailto:comercial@brotay.com.br"
+           class="px-10 py-6 rounded-2xl border border-gray-600 flex items-center gap-4 hover:border-brand-primary transition">
+          <i class="fa-solid fa-envelope text-2xl text-brand-primary"></i>
+          <span class="heading-font text-xl font-bold">
+            Fale com um consultor
+          </span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="w-5/12 relative h-full flex items-center justify-center">
+      <div class="mascot-glow"></div>
+
+      <img alt="Mascote Brotay"
+           class="relative z-20 w-full max-w-lg object-contain transform scale-115 drop-shadow-2xl"
+           src="midias/mascote-brotay.png"/>
+
+      <div class="floating-icon absolute top-28 right-10 p-4 rounded-xl z-30">
+        <i class="fa-solid fa-star text-yellow-400 text-3xl"></i>
+      </div>
+
+      <div class="floating-icon absolute bottom-28 left-10 p-4 rounded-xl z-30">
+        <i class="fa-solid fa-chart-line text-green-400 text-3xl"></i>
+      </div>
+
+      <div class="floating-icon absolute top-1/2 -right-4 p-3 rounded-lg z-10 opacity-60">
+        <i class="fa-solid fa-shield-halved text-blue-400 text-xl"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Page number -->
+  <div class="absolute bottom-8 right-12 text-gray-600 font-bold font-mono">07</div>
+
+</div>
+<!-- Navigation Buttons (outside container) -->
+<div class="nav-buttons">
+  <button onclick="window.location.href='01-capa.html'" class="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-lg font-bold transition" title="Voltar para o início">
+    <i class="fa-solid fa-home"></i> <span class="mobile-hidden">Início</span>
+  </button>
+  <button onclick="window.location.href='06-objetivo.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Slide anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <a href="https://www.brotay.com.br" target="_blank" class="bg-brand-secondary hover:bg-brand-primary text-white px-4 py-2 rounded-lg font-bold transition text-center" title="Visitar o site">
+    <i class="fa-solid fa-globe"></i> <span class="mobile-hidden">Site</span>
+  </a>
+</div>
+<div class="swipe-hint"><i class="fa-solid fa-hand-pointer"></i> Deslize para navegar</div>
+<script src="js/navigation.js"></script>
+</body>
+</html>

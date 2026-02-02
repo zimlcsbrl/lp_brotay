@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brotay - O Problema</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="styles/responsive.css" rel="stylesheet"/>
+<style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-y: auto; 
+            background-color: #111827; 
+            font-family: 'Open Sans', sans-serif; 
+        }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            display: flex; 
+            flex-direction: column;
+            position: relative; 
+            overflow: visible; 
+            background-color: #111827;
+        }
+        
+        h1, h2, h3, .heading-font { font-family: 'Montserrat', sans-serif; }
+        
+        .text-brand-primary { color: #FF4500; }
+        .bg-brand-primary { background-color: #FF4500; }
+        .text-brand-secondary { color: #FF6B35; }
+        .bg-brand-secondary { background-color: #FF6B35; }
+        .border-brand-primary { border-color: #FF4500; }
+        
+        .circle-accent {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(80px);
+        }
+        
+        .problem-card {
+            background: rgba(31, 41, 55, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .alert-icon-box {
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.3);
+        }
+
+        .closing-box {
+            background: linear-gradient(90deg, rgba(255,69,0,0.1) 0%, rgba(17,24,39,0) 100%);
+            border-left: 6px solid #FF4500;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container text-white p-16">
+<!-- Decorative Background -->
+<div class="circle-accent bg-brand-primary opacity-5" style="width: 600px; height: 600px; top: -100px; right: -100px;"></div>
+<div class="circle-accent bg-red-900 opacity-10" style="width: 500px; height: 500px; bottom: -100px; left: -100px;"></div>
+<!-- Top Accent Line -->
+<div class="absolute top-0 left-0 h-2 w-full bg-brand-primary z-50"></div>
+<!-- Content Layout -->
+<div class="flex flex-1 z-10 h-full">
+<!-- Left Column: Title & Intro -->
+<div class="w-5/12 flex flex-col justify-center pr-12">
+<div class="mb-8">
+<span class="text-brand-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Cenário Atual</span>
+<h1 class="heading-font text-6xl font-black mb-6 leading-none">
+                    O Problema<br/>
+<span class="text-gray-500 text-5xl">do Mercado</span>
+</h1>
+<p class="text-xl text-gray-300 leading-relaxed">
+                    Hoje, a maioria dos produtores de eventos opera no escuro, enfrentando desafios operacionais e cegueira estratégica.
+                </p>
+</div>
+<!-- Large Visual Icon for Problem -->
+<div class="mt-8 opacity-20 transform -ml-8">
+<i class="fa-solid fa-triangle-exclamation text-9xl text-gray-600"></i>
+</div>
+</div>
+<!-- Right Column: Problems List -->
+<div class="w-7/12 flex flex-col justify-center h-full pl-8 border-l border-gray-800">
+<!-- Problem Item 1 -->
+<div class="problem-card flex items-center p-5 rounded-xl mb-4">
+<div class="alert-icon-box w-14 h-14 rounded-lg bg-red-500 bg-opacity-20 flex items-center justify-center text-brand-primary mr-5 flex-shrink-0">
+<i class="fa-solid fa-users-slash text-2xl"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-lg text-white">Público Desconhecido</h3>
+<p class="text-gray-400 text-sm">Vende ingressos sem entender quem é o público real.</p>
+</div>
+</div>
+<!-- Problem Item 2 -->
+<div class="problem-card flex items-center p-5 rounded-xl mb-4">
+<div class="alert-icon-box w-14 h-14 rounded-lg bg-red-500 bg-opacity-20 flex items-center justify-center text-brand-primary mr-5 flex-shrink-0">
+<i class="fa-solid fa-file-circle-xmark text-2xl"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-lg text-white">Dados Inexistentes</h3>
+<p class="text-gray-400 text-sm">Depende de relatórios confusos ou planilhas manuais.</p>
+</div>
+</div>
+<!-- Problem Item 3 -->
+<div class="problem-card flex items-center p-5 rounded-xl mb-4">
+<div class="alert-icon-box w-14 h-14 rounded-lg bg-red-500 bg-opacity-20 flex items-center justify-center text-brand-primary mr-5 flex-shrink-0">
+<i class="fa-solid fa-money-bill-transfer text-2xl"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-lg text-white">Financeiro Prejudicado</h3>
+<p class="text-gray-400 text-sm">Paga taxas altas e recebe o dinheiro com atraso.</p>
+</div>
+</div>
+<!-- Problem Item 4 -->
+<div class="problem-card flex items-center p-5 rounded-xl mb-8">
+<div class="alert-icon-box w-14 h-14 rounded-lg bg-red-500 bg-opacity-20 flex items-center justify-center text-brand-primary mr-5 flex-shrink-0">
+<i class="fa-solid fa-dice text-2xl"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-lg text-white">Decisão no "Achismo"</h3>
+<p class="text-gray-400 text-sm">Estratégias baseadas em intuição, não em dados.</p>
+</div>
+</div>
+<!-- Closing Statement -->
+<div class="closing-box p-6 rounded-r-xl">
+<p class="heading-font text-2xl font-bold text-white leading-tight">
+<i class="fa-solid fa-quote-left text-brand-secondary opacity-50 mr-2 text-xl"></i>
+                    Sem dados, cada evento vira um <span class="text-brand-primary">risco financeiro</span>.
+                </p>
+</div>
+</div>
+</div>
+<!-- Page Number -->
+<div class="absolute bottom-8 right-12 text-gray-600 font-bold font-mono">02</div>
+</div>
+<!-- Navigation Buttons (outside container) -->
+<div class="nav-buttons">
+  <button onclick="window.location.href='01-capa.html'" class="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-lg font-bold transition" title="Voltar para o início">
+    <i class="fa-solid fa-home"></i> <span class="mobile-hidden">Início</span>
+  </button>
+  <button onclick="window.location.href='01-capa.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Slide anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button onclick="window.location.href='03-solucao.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Próximo slide">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <a href="https://www.brotay.com.br" target="_blank" class="bg-brand-secondary hover:bg-brand-primary text-white px-4 py-2 rounded-lg font-bold transition text-center" title="Visitar o site">
+    <i class="fa-solid fa-globe"></i> <span class="mobile-hidden">Site</span>
+  </a>
+</div>
+<div class="swipe-hint"><i class="fa-solid fa-hand-pointer"></i> Deslize para navegar</div>
+<script src="js/navigation.js"></script>
+</body>
+</html>

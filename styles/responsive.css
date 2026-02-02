@@ -1,0 +1,264 @@
+/* ===========================================
+   RESPONSIVE STYLES FOR BROTAY PRESENTATION
+   =========================================== */
+
+/* Base Mobile-First Adjustments */
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Slide Container - Responsive */
+.slide-container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 100vh;
+    height: auto !important;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+}
+
+/* Navigation Buttons - Mobile Horizontal Bar */
+.nav-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.nav-buttons button,
+.nav-buttons a {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Desktop Navigation - Vertical on Right */
+@media (min-width: 1024px) {
+    body {
+        overflow-y: auto;
+    }
+    
+    .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        height: auto !important;
+        padding: 0;
+        padding-bottom: 20px;
+    }
+    
+    .nav-buttons {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        left: auto;
+        flex-direction: column;
+        background: transparent;
+        padding: 0;
+    }
+    
+    .nav-buttons button,
+    .nav-buttons a {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* ===========================================
+   MOBILE STYLES (max-width: 768px)
+   =========================================== */
+@media (max-width: 768px) {
+    /* Typography scaling */
+    .text-6xl { font-size: 2rem !important; line-height: 1.2 !important; }
+    .text-5xl { font-size: 1.75rem !important; line-height: 1.2 !important; }
+    .text-4xl { font-size: 1.5rem !important; line-height: 1.3 !important; }
+    .text-3xl { font-size: 1.25rem !important; line-height: 1.3 !important; }
+    .text-2xl { font-size: 1.125rem !important; line-height: 1.4 !important; }
+    .text-xl { font-size: 1rem !important; line-height: 1.5 !important; }
+    .text-7xl { font-size: 2.5rem !important; line-height: 1.1 !important; }
+    
+    /* Stack columns on mobile */
+    .slide-container {
+        flex-direction: column !important;
+        padding-bottom: 80px; /* Space for nav buttons */
+    }
+    
+    /* Full width columns */
+    .w-7\/12, .w-5\/12, .w-6\/12, .w-1\/2 {
+        width: 100% !important;
+    }
+    
+    /* Reduce padding */
+    .pl-24 { padding-left: 1.5rem !important; }
+    .pr-24 { padding-right: 1.5rem !important; }
+    .pl-16 { padding-left: 1rem !important; }
+    .pr-16 { padding-right: 1rem !important; }
+    .pl-12 { padding-left: 1rem !important; }
+    .pr-12 { padding-right: 1rem !important; }
+    .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
+    .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
+    .py-16 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    
+    /* Logo adjustments */
+    .absolute.top-16.left-24 {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        margin-bottom: 1rem;
+    }
+    
+    /* Hide or shrink mascot on very small screens */
+    .mascot-container img,
+    .w-96 {
+        width: 200px !important;
+        max-width: 60vw !important;
+    }
+    
+    /* Floating cards - hide on mobile */
+    .glass-panel.absolute {
+        display: none !important;
+    }
+    
+    /* Decorative circles - smaller */
+    .circle-accent {
+        transform: scale(0.5);
+    }
+    
+    /* Bottom elements */
+    .absolute.bottom-16 {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem !important;
+    }
+    
+    /* Page numbers */
+    .absolute.bottom-8.right-12 {
+        bottom: 70px !important;
+        right: 1rem !important;
+    }
+    
+    /* Cards grid */
+    .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Problem cards */
+    .space-y-5 > div {
+        padding: 0.75rem !important;
+    }
+    
+    /* Dashboard mockup */
+    .browser-mockup {
+        transform: scale(0.9) !important;
+        margin: 0 !important;
+    }
+    
+    /* Quotes */
+    .closing-box {
+        margin: 1rem 0 !important;
+    }
+    
+    /* Charts - smaller on mobile */
+    [id*="chart"] {
+        height: 200px !important;
+    }
+    
+    /* Feature cards */
+    .feature-card {
+        padding: 1rem !important;
+    }
+    
+    /* Hide skewed backgrounds on mobile */
+    .skew-x-12 {
+        display: none !important;
+    }
+    
+    /* CTA buttons */
+    .cta-button {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* ===========================================
+   TABLET STYLES (769px - 1023px)
+   =========================================== */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .slide-container {
+        padding: 2rem;
+        padding-bottom: 100px;
+    }
+    
+    .text-6xl { font-size: 3rem !important; }
+    .text-5xl { font-size: 2.5rem !important; }
+    .text-4xl { font-size: 2rem !important; }
+    
+    .pl-24 { padding-left: 2rem !important; }
+    .pr-24 { padding-right: 2rem !important; }
+    
+    .mascot-container img,
+    .w-96 {
+        width: 280px !important;
+    }
+}
+
+/* ===========================================
+   SWIPE INDICATOR FOR MOBILE
+   =========================================== */
+@media (max-width: 1023px) {
+    .swipe-hint {
+        display: block;
+        position: fixed;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.75rem;
+        text-align: center;
+        animation: fadeInOut 3s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+}
+
+@media (min-width: 1024px) {
+    .swipe-hint {
+        display: none;
+    }
+}
+
+/* ===========================================
+   UTILITY CLASSES
+   =========================================== */
+.mobile-hidden {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+}

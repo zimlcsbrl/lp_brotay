@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brotay - A Solução</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="styles/responsive.css" rel="stylesheet"/>
+<style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-y: auto; 
+            background-color: #111827; 
+            font-family: 'Open Sans', sans-serif; 
+        }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            display: flex; 
+            position: relative; 
+            overflow: visible; 
+            background-color: #111827;
+        }
+        
+        /* Typography */
+        h1, h2, h3, .heading-font { font-family: 'Montserrat', sans-serif; }
+        
+        .text-brand-primary { color: #FF4500; }
+        .bg-brand-primary { background-color: #FF4500; }
+        .text-brand-secondary { color: #FF6B35; }
+        .bg-brand-secondary { background-color: #FF6B35; }
+        .text-brand-gold { color: #FFD700; }
+        
+        /* Background Decorations - Using Solid Colors with Opacity instead of Gradients */
+        .circle-accent {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(80px);
+        }
+        
+        /* Glass/Card Styles */
+        .feature-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #374151; /* Dark Gray border initially */
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover, .feature-item.active {
+            background-color: rgba(255, 69, 0, 0.1); /* Brand Primary low opacity */
+            border-left-color: #FF4500;
+        }
+
+        .dashboard-frame {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #1F2937;
+            border-radius: 12px;
+            overflow: hidden;
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .dashboard-frame:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container text-white p-12">
+<!-- Decorative Background Elements -->
+<!-- Top Right Orange Glow -->
+<div class="circle-accent bg-brand-primary opacity-10" style="width: 700px; height: 700px; top: -200px; right: -200px;"></div>
+<!-- Bottom Left Red Glow -->
+<div class="circle-accent bg-red-900 opacity-10" style="width: 500px; height: 500px; bottom: -100px; left: -100px;"></div>
+<!-- Accent Line Top -->
+<div class="absolute top-0 left-0 h-2 w-full bg-brand-primary z-50"></div>
+<!-- Main Content Grid -->
+<div class="flex w-full h-full z-10 relative">
+<!-- Left Column: Content (40%) -->
+<div class="w-5/12 flex flex-col justify-center pr-8">
+<div class="mb-2">
+<span class="text-brand-secondary font-bold tracking-widest uppercase text-sm mb-2 block">A Solução</span>
+<h1 class="heading-font text-5xl font-black mb-6 leading-tight">
+                    Plataforma<br/>
+<span class="text-brand-primary">Centralizada</span>
+</h1>
+</div>
+<p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                A Brotay centraliza tudo em uma única plataforma. Tudo em tempo real, sem complexidade operacional.
+            </p>
+<!-- Features List -->
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="feature-item p-4 rounded-r-lg flex items-center active">
+<div class="w-10 h-10 rounded-full bg-brand-primary bg-opacity-20 flex items-center justify-center mr-4 text-brand-primary shrink-0">
+<i class="fa-solid fa-ticket"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-white">Venda Simples e Segura</h3>
+<p class="text-xs text-gray-400">Ingressos com tecnologia antifraude.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="feature-item p-4 rounded-r-lg flex items-center">
+<div class="w-10 h-10 rounded-full bg-blue-500 bg-opacity-20 flex items-center justify-center mr-4 text-blue-400 shrink-0">
+<i class="fa-solid fa-users-viewfinder"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-white">Gestão Completa do Público</h3>
+<p class="text-xs text-gray-400">Saiba quem são seus clientes.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="feature-item p-4 rounded-r-lg flex items-center">
+<div class="w-10 h-10 rounded-full bg-brand-gold bg-opacity-20 flex items-center justify-center mr-4 text-brand-gold shrink-0">
+<i class="fa-solid fa-chart-pie"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-white">Relatórios Acionáveis</h3>
+<p class="text-xs text-gray-400">Dados claros para tomada de decisão.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="feature-item p-4 rounded-r-lg flex items-center">
+<div class="w-10 h-10 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center mr-4 text-green-400 shrink-0">
+<i class="fa-solid fa-bolt"></i>
+</div>
+<div>
+<h3 class="heading-font font-bold text-white">Operação em Tempo Real</h3>
+<p class="text-xs text-gray-400">Acompanhe vendas ao vivo.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Dashboard Showcase (60%) -->
+<div class="w-7/12 flex flex-col justify-center items-center relative pl-4">
+<!-- Background Blob behind dashboard -->
+<div class="absolute w-96 h-96 bg-brand-primary rounded-full opacity-5 filter blur-3xl z-0"></div>
+<!-- Dashboard Browser Window Frame -->
+<div class="dashboard-frame relative z-10 w-full max-w-2xl">
+<!-- Browser Header -->
+<div class="bg-gray-800 px-4 py-2 flex items-center border-b border-gray-700">
+<div class="flex space-x-2 mr-4">
+<div class="dot bg-red-500"></div>
+<div class="dot bg-yellow-500"></div>
+<div class="dot bg-green-500"></div>
+</div>
+<div class="bg-gray-900 rounded px-3 py-1 text-xs text-gray-500 flex-1 font-mono text-center">
+                        dashboard.brotay.com.br
+                    </div>
+</div>
+<!-- Dashboard Image -->
+<div class="relative bg-gray-900 aspect-video overflow-hidden">
+<img alt="Dashboard Brotay" class="w-full h-full object-cover object-top" src="midias/dashboard-produtor.png"/>
+<!-- Overlay Highlights (Simulated UI interactions) -->
+<div class="absolute top-1/4 right-1/4 w-3 h-3 bg-brand-primary rounded-full animate-ping z-20"></div>
+<div class="absolute top-1/4 right-1/4 w-3 h-3 bg-brand-primary rounded-full z-20 border-2 border-white"></div>
+</div>
+</div>
+<!-- Floating Label -->
+<div class="absolute bottom-20 -right-4 bg-gray-800 border border-gray-600 px-4 py-2 rounded-lg shadow-xl z-20 flex items-center gap-3">
+<i class="fa-solid fa-laptop-code text-brand-secondary"></i>
+<div>
+<p class="text-xs text-gray-400 uppercase font-bold">Interface</p>
+<p class="text-sm font-bold text-white">Dashboard Produtor</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Page Number -->
+<div class="absolute bottom-8 right-12 text-gray-600 font-bold font-mono">03</div>
+</div>
+<!-- Navigation Buttons (outside container) -->
+<div class="nav-buttons">
+  <button onclick="window.location.href='01-capa.html'" class="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-lg font-bold transition" title="Voltar para o início">
+    <i class="fa-solid fa-home"></i> <span class="mobile-hidden">Início</span>
+  </button>
+  <button onclick="window.location.href='02-problema.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Slide anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button onclick="window.location.href='04-funcionalidades.html'" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-bold transition" title="Próximo slide">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <a href="https://www.brotay.com.br" target="_blank" class="bg-brand-secondary hover:bg-brand-primary text-white px-4 py-2 rounded-lg font-bold transition text-center" title="Visitar o site">
+    <i class="fa-solid fa-globe"></i> <span class="mobile-hidden">Site</span>
+  </a>
+</div>
+<div class="swipe-hint"><i class="fa-solid fa-hand-pointer"></i> Deslize para navegar</div>
+<script src="js/navigation.js"></script>
+</body>
+</html>

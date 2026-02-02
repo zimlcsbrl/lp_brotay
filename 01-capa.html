@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brotay - Capa</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="styles/responsive.css" rel="stylesheet"/>
+<style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow-y: auto; 
+            background-color: #111827; /* Dark Gray/Black */
+            font-family: 'Open Sans', sans-serif; 
+        }
+        .slide-container { 
+            width: 1280px; 
+            min-height: 720px; 
+            display: flex; 
+            position: relative; 
+            overflow: visible; 
+            background-color: #111827;
+        }
+        
+        /* Typography */
+        h1, h2, h3, .heading-font { font-family: 'Montserrat', sans-serif; }
+        
+        /* Brand Colors */
+        .text-brand-primary { color: #FF4500; } /* Orange Red */
+        .bg-brand-primary { background-color: #FF4500; }
+        
+        .text-brand-secondary { color: #FF6B35; } /* Vivid Orange */
+        .bg-brand-secondary { background-color: #FF6B35; }
+        
+        .text-brand-gold { color: #FFD700; } /* Gold */
+        .border-brand-gold { border-color: #FFD700; }
+        
+        /* Decorative Elements */
+        .circle-accent {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mascot-container img {
+            filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.5));
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container text-white">
+<!-- Decorative Background Shapes -->
+<!-- Large Orange Circle Top Right -->
+<div class="circle-accent bg-brand-primary opacity-10" style="width: 800px; height: 800px; top: -300px; right: -200px;"></div>
+<!-- Small Gold Circle Bottom Left -->
+<div class="circle-accent bg-yellow-500 opacity-5" style="width: 400px; height: 400px; bottom: -100px; left: -100px;"></div>
+<!-- Accent Line -->
+<div class="absolute top-0 left-0 h-2 w-full bg-brand-primary z-50"></div>
+<!-- Left Column: Content -->
+<div class="w-7/12 flex flex-col justify-center pl-24 pr-8 z-10 relative h-full">
+<!-- Header / Logo Area -->
+<div class="absolute top-16 left-24 flex items-center">
+<!-- Logo Image -->
+<img alt="Brotay Logo" class="h-16 object-contain" src="midias/logo-texto.png"/>
+</div>
+<!-- Main Title & Subtitle -->
+<div class="mt-12">
+<h1 class="heading-font text-6xl font-black mb-6 leading-tight">
+                    Ingressos, dados e <br/>
+<span class="text-brand-primary">decisões inteligentes</span>
+</h1>
+<p class="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+                    A Brotay é uma plataforma de venda de ingressos focada em performance. Mais do que vender entradas, entregamos dados claros para que produtores tomem decisões melhores.
+                </p>
+</div>
+<!-- Highlight Box -->
+<div class="mt-4 flex items-start">
+<div class="h-full w-1 bg-brand-primary mr-6 rounded-full self-stretch min-h-[80px]"></div>
+<div class="py-2">
+<p class="heading-font text-3xl font-bold italic text-white leading-tight">
+                        "Evento bom vende.<br/>
+<span class="text-brand-secondary">Evento inteligente cresce.</span>"
+                    </p>
+</div>
+</div>
+<!-- Decorative Bottom Element -->
+<div class="absolute bottom-16 left-24 flex items-center gap-4 text-sm text-gray-400 font-semibold tracking-wider uppercase">
+<span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Dados em tempo real</span>
+<span class="w-1 h-1 bg-gray-600 rounded-full"></span>
+<span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> Gestão completa</span>
+</div>
+</div>
+<!-- Right Column: Visuals/Mascot -->
+<div class="w-5/12 relative flex items-center justify-center z-10 h-full">
+<!-- Background Shape for Mascot -->
+<div class="absolute w-full h-full bg-gray-800 opacity-30 skew-x-12 origin-bottom-left" style="right: -100px;"></div>
+<!-- Mascot/Visual Container -->
+<div class="relative z-20 w-full flex flex-col items-center justify-center">
+<!-- Glowing effect behind -->
+<div class="absolute w-64 h-64 bg-brand-primary rounded-full filter blur-3xl opacity-20"></div>
+<!-- Mascot Image -->
+<div class="mascot-container relative">
+<img alt="Mascote Brotay" class="w-96 h-auto object-contain relative z-20" src="midias/mascote-brotay.png"/>
+<!-- Floating Data Cards -->
+<div class="absolute -left-12 bottom-20 glass-panel p-4 rounded-xl shadow-2xl z-30 animate-pulse" style="animation-duration: 4s;">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brand-secondary flex items-center justify-center">
+<i class="fa-solid fa-chart-line text-white"></i>
+</div>
+<div>
+<p class="text-xs text-gray-400 font-bold uppercase">ROI</p>
+<p class="text-lg font-bold text-white">+125%</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-4 top-20 glass-panel p-3 rounded-lg shadow-2xl z-10">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-ticket text-brand-gold"></i>
+<span class="text-sm font-bold text-white">Sold Out</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons (outside container) -->
+<div class="nav-buttons">
+  <button onclick="window.location.href='02-problema.html'" class="bg-brand-primary hover:bg-brand-secondary text-white px-4 py-2 rounded-lg font-bold transition" title="Começar apresentação">
+    <i class="fa-solid fa-play"></i> <span class="mobile-hidden">Começar</span>
+  </button>
+  <a href="https://www.brotay.com.br" target="_blank" class="bg-brand-secondary hover:bg-brand-primary text-white px-4 py-2 rounded-lg font-bold transition text-center" title="Visitar o site">
+    <i class="fa-solid fa-globe"></i> <span class="mobile-hidden">Site</span>
+  </a>
+</div>
+<div class="swipe-hint"><i class="fa-solid fa-hand-pointer"></i> Deslize para navegar</div>
+<script src="js/navigation.js"></script>
+</body>
+</html>
